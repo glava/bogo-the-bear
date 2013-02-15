@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="bogo-the-bear">
+    <configurations>
+      <configuration name="bogo-the-bear" target-platform="Desktop" main-class="Bogothebear" output-file="Bogothebear.swf" output-folder="$MODULE_DIR$/out/production/bogo-the-bear">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="4923dadc-630a-415a-ad06-db681b3fa0c2">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="76ed042c-346b-44cb-962a-d5661578dbbb">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="9c844976-fb72-4039-af84-0e2ea38c6fff">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="flex_sdk_4.6" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop package-file-name="Bogothebear" />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="4923dadc-630a-415a-ad06-db681b3fa0c2" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/airkinect-2-core-mssdk.ane!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="76ed042c-346b-44cb-962a-d5661578dbbb" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/away3d-core-fp11.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="9c844976-fb72-4039-af84-0e2ea38c6fff" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/MinimalComps_0_9_10.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

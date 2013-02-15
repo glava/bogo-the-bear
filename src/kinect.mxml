@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        creationComplete="creationComplete(event)"
+        >
+    <fx:Script><![CDATA[
+        import com.org.bogo.kinect.skeleton.SkeletonJointsDemo;
+        import com.org.bogo.kinect.skeleton.position.DistanceZone;
+        import com.org.bogo.kinect.skeleton.position.event.DistanceZoneEvent;
+
+        import flashx.textLayout.elements.SpecialCharacterElement;
+
+        import mx.controls.Alert;
+
+        import spark.core.SpriteVisualElement;
+
+        function creationComplete(event:Event):void {
+            var ske:SkeletonJointsDemo = new SkeletonJointsDemo();
+
+            var sprCont:SpriteVisualElement = new SpriteVisualElement();
+            sprCont.addChild(ske);
+            this.addElement(sprCont);
+            ske.addEventListener(DistanceZoneEvent.DISTANCE_ZONE_CHANGED, onDistanceChangeded);
+        }
+
+        private function onDistanceChangeded(event:DistanceZoneEvent):void {
+                            trace(event.distanceZone);
+
+            fillColor.color = getColorByDistance(event.distanceZone) ;
+        }
+
+        private function getColorByDistance(distance:String):uint {
+            var color:uint = 0xFF0000;
+            if(distance == DistanceZone.BLUE_ZONE) {
+                 color =  0x0000FF;
+            } else if(distance == DistanceZone.GREEN_ZONE) {
+                color =  0x00FF00;
+            }
+            return color;
+        }
+        ]]></fx:Script>
+
+     <s:Rect width="100%" height="100%">
+        <s:fill>
+            <s:SolidColor color="gray" id="fillColor">
+
+            </s:SolidColor>
+        </s:fill>
+     </s:Rect>
+
+</s:WindowedApplication>
