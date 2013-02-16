@@ -4,6 +4,7 @@
         >
     <fx:Script><![CDATA[
         import com.org.bogo.kinect.skeleton.SkeletonJointsDemo;
+        import com.org.bogo.kinect.skeleton.gesture.event.GestureEvent;
         import com.org.bogo.kinect.skeleton.position.DistanceZone;
         import com.org.bogo.kinect.skeleton.position.event.DistanceZoneEvent;
 
@@ -20,22 +21,35 @@
             sprCont.addChild(ske);
             this.addElement(sprCont);
             ske.addEventListener(DistanceZoneEvent.DISTANCE_ZONE_CHANGED, onDistanceChangeded);
+            ske.addEventListener(com.org.bogo.kinect.skeleton.gesture.event.GestureEvent.WAVE_STARTED, onWaveStarted);
+            ske.addEventListener(com.org.bogo.kinect.skeleton.gesture.event.GestureEvent.WAVE_ENDED, onWaveEnded);
+
         }
 
         private function onDistanceChangeded(event:DistanceZoneEvent):void {
-                            trace(event.distanceZone);
+            trace(event.distanceZone);
 
-            fillColor.color = getColorByDistance(event.distanceZone) ;
+            rightHandColor.color = fillColor.color = getColorByDistance(event.distanceZone);
+
         }
+
 
         private function getColorByDistance(distance:String):uint {
             var color:uint = 0xFF0000;
-            if(distance == DistanceZone.BLUE_ZONE) {
-                 color =  0x0000FF;
-            } else if(distance == DistanceZone.GREEN_ZONE) {
-                color =  0x00FF00;
+            if (distance == DistanceZone.BLUE_ZONE) {
+                color = 0x0000FF;
+            } else if (distance == DistanceZone.GREEN_ZONE) {
+                color = 0x00FF00;
             }
             return color;
+        }
+
+        private function onWaveStarted(event:com.org.bogo.kinect.skeleton.gesture.event.GestureEvent):void {
+            rightHandColor.color = 0xFFFFFF;
+        }
+
+        private function onWaveEnded(event:com.org.bogo.kinect.skeleton.gesture.event.GestureEvent):void {
+            rightHandColor.color = fillColor.color;
         }
         ]]></fx:Script>
 
@@ -46,5 +60,13 @@
             </s:SolidColor>
         </s:fill>
      </s:Rect>
+
+    <s:Rect width="50%" height="100%" right="0">
+        <s:fill>
+            <s:SolidColor color="gray" id="rightHandColor">
+
+            </s:SolidColor>
+        </s:fill>
+    </s:Rect>
 
 </s:WindowedApplication>

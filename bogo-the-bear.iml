@@ -14,6 +14,9 @@
             <entry library-id="9c844976-fb72-4039-af84-0e2ea38c6fff">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="d762bff1-580e-4f7c-830f-9fdb829affe2">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="flex_sdk_4.6" />
         </dependencies>
@@ -57,6 +60,16 @@
         <properties id="9c844976-fb72-4039-af84-0e2ea38c6fff" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/MinimalComps_0_9_10.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="d762bff1-580e-4f7c-830f-9fdb829affe2" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/AirKinectGestureLib-v1.1-BETA.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
